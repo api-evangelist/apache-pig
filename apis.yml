@@ -1,0 +1,36 @@
+aid: apache-pig
+name: Apache Pig
+description: >-
+  Apache Pig is a platform for analyzing large data sets that provides a high-level language (Pig Latin) for expressing data analysis programs. It compiles Pig Latin programs into MapReduce/Tez jobs and runs them on Hadoop clusters.
+type: Index
+position: Consumer
+access: 3rd-Party
+image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Data Analysis
+  - Big Data
+  - Hadoop
+  - ETL
+  - Scripting
+created: '2026-03-16'
+modified: '2026-03-16'
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/apache-pig/refs/heads/main/apis.yml
+specificationVersion: '0.19'
+apis:
+  - aid: apache-pig:apache-pig
+    name: Apache Pig
+    description: >-
+      Pig provides the Pig Latin scripting language for data analysis, an embedded Pig API for programmatic execution from Java, and a UDF (User Defined Function) API for custom data transformation functions.
+    humanURL: https://pig.apache.org/docs/latest/
+    tags:
+      - Pig Latin
+      - Java
+      - UDF
+      - Data Analysis
+    properties:
+      - type: Documentation
+        url: https://pig.apache.org/docs/latest/
+maintainers:
+  - FN: Kin Lane
+    email: info@apievangelist.com
