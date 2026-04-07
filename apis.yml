@@ -7,10 +7,10 @@ position: Consumer
 access: 3rd-Party
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - Data Analysis
   - Big Data
-  - Hadoop
+  - Data Analysis
   - ETL
+  - Hadoop
   - Scripting
 created: '2026-03-16'
 modified: '2026-03-16'
@@ -24,10 +24,10 @@ apis:
       Pig provides the Pig Latin scripting language for data analysis, an embedded Pig API for programmatic execution from Java, and a UDF (User Defined Function) API for custom data transformation functions.
     humanURL: https://pig.apache.org/docs/latest/
     tags:
-      - Pig Latin
-      - Java
-      - UDF
       - Data Analysis
+      - Java
+      - Pig Latin
+      - UDF
     properties:
       - type: Documentation
         url: https://pig.apache.org/docs/latest/
