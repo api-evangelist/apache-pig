@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-pig/refs/heads/main/json-schema/apache-pig-script-request-schema.json",
+  "title": "ScriptRequest",
+  "description": "ScriptRequest schema from Apache Pig",
+  "type": "object",
+  "properties": {
+    "script": {
+      "type": "string",
+      "example": "A = LOAD 'data.csv';\nB = FOREACH A GENERATE $0, $1;"
+    }
+  },
+  "required": [
+    "script"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-pig/refs/heads/main/json-schema/apache-pig-job-list-schema.json",
+  "title": "JobList",
+  "description": "JobList schema from Apache Pig",
+  "type": "object",
+  "properties": {
+    "jobs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Job"
+      }
+    },
+    "total": {
+      "type": "integer",
+      "example": 5
+    }
+  }
+}

@@ -1,0 +1,62 @@
+vocabulary: "1.0.0"
+info:
+  provider: "Apache Pig"
+  description: "Vocabulary for Apache Pig data processing platform API"
+  created: "2026-04-19"
+  modified: "2026-04-19"
+operational:
+  apis:
+    - namespace: pig
+      version: "0.17.0"
+      baseUrl: "https://localhost:8080/pig"
+      status: active
+  resources:
+    - name: jobs
+      api: pig
+      actions: [list, submit, get, kill]
+    - name: scripts
+      api: pig
+      actions: [validate, submit]
+    - name: logs
+      api: pig
+      actions: [get]
+  actions:
+    - name: list
+      httpMethod: GET
+      pattern: read
+    - name: submit
+      httpMethod: POST
+      pattern: write
+    - name: validate
+      httpMethod: POST
+      pattern: read
+    - name: kill
+      httpMethod: DELETE
+      pattern: destructive
+capability:
+  workflows:
+    - name: Data Processing Workflow
+      file: capabilities/pig-workflow.yaml
+      apis: [pig]
+      tools: 6
+      personas: [Data Engineer, Data Analyst]
+  personas:
+    - id: data-engineer
+      name: Data Engineer
+      description: "Builds ETL pipelines using Pig Latin scripts"
+    - id: data-analyst
+      name: Data Analyst
+      description: "Runs ad-hoc data analysis jobs on Hadoop clusters"
+  domains:
+    - Big Data
+    - ETL
+    - Data Analysis
+crossReference:
+  - resource: jobs
+    operations: [list, submit, kill]
+    workflows: [Data Processing Workflow]
+    personas: [Data Engineer, Data Analyst]
+  - resource: scripts
+    operations: [validate]
+    workflows: [Data Processing Workflow]
+    personas: [Data Engineer]

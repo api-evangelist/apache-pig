@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-pig/refs/heads/main/json-schema/apache-pig-job-schema.json",
+  "title": "Job",
+  "description": "Job schema from Apache Pig",
+  "type": "object",
+  "properties": {
+    "jobId": {
+      "type": "string",
+      "example": "job_20260419_001"
+    },
+    "name": {
+      "type": "string",
+      "example": "sales-analysis"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "submitted",
+        "running",
+        "succeeded",
+        "failed",
+        "killed"
+      ],
+      "example": "running"
+    },
+    "submittedAt": {
+      "type": "string",
+      "format": "date-time",
+      "example": "2026-04-19T10:00:00Z"
+    },
+    "startedAt": {
+      "type": "string",
+      "format": "date-time",
+      "example": "2026-04-19T10:01:00Z"
+    },
+    "completedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "executionEngine": {
+      "type": "string",
+      "enum": [
+        "mapreduce",
+        "tez",
+        "local"
+      ],
+      "example": "tez"
+    },
+    "progress": {
+      "type": "number",
+      "description": "Progress percentage 0-100",
+      "example": 45.5
+    }
+  }
+}

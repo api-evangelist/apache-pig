@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-pig/refs/heads/main/json-structure/apache-pig-validation-result-structure.json",
+  "description": "ValidationResult schema from Apache Pig",
+  "type": "object",
+  "properties": {
+    "valid": {
+      "type": "boolean",
+      "example": true
+    },
+    "errors": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ValidationError"
+      }
+    }
+  },
+  "name": "ValidationResult"
+}

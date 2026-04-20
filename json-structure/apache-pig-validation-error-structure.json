@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-pig/refs/heads/main/json-structure/apache-pig-validation-error-structure.json",
+  "description": "ValidationError schema from Apache Pig",
+  "type": "object",
+  "properties": {
+    "line": {
+      "type": "int32",
+      "example": 3
+    },
+    "column": {
+      "type": "int32",
+      "example": 10
+    },
+    "message": {
+      "type": "string",
+      "example": "Undefined alias: UNDEFINED_ALIAS"
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "error",
+        "warning"
+      ],
+      "example": "error"
+    }
+  },
+  "name": "ValidationError"
+}

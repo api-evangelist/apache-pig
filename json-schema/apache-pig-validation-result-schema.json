@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-pig/refs/heads/main/json-schema/apache-pig-validation-result-schema.json",
+  "title": "ValidationResult",
+  "description": "ValidationResult schema from Apache Pig",
+  "type": "object",
+  "properties": {
+    "valid": {
+      "type": "boolean",
+      "example": true
+    },
+    "errors": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ValidationError"
+      }
+    }
+  }
+}

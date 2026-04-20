@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-pig/refs/heads/main/json-schema/apache-pig-job-logs-schema.json",
+  "title": "JobLogs",
+  "description": "JobLogs schema from Apache Pig",
+  "type": "object",
+  "properties": {
+    "jobId": {
+      "type": "string",
+      "example": "job_20260419_001"
+    },
+    "logs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "example": [
+        "2026-04-19 10:00:00 INFO Pig script started"
+      ]
+    }
+  }
+}

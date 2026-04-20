@@ -1,0 +1,6 @@
+{
+  "line": 1234,
+  "column": 1234,
+  "message": "example",
+  "severity": "error"
+}

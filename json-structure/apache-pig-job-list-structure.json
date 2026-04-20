@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-pig/refs/heads/main/json-structure/apache-pig-job-list-structure.json",
+  "description": "JobList schema from Apache Pig",
+  "type": "object",
+  "properties": {
+    "jobs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Job"
+      }
+    },
+    "total": {
+      "type": "int32",
+      "example": 5
+    }
+  },
+  "name": "JobList"
+}

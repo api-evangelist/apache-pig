@@ -1,0 +1,91 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "pig": "https://pig.apache.org/schema/",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "JobList": "pig:JobList",
+    "Job": "pig:Job",
+    "JobRequest": "pig:JobRequest",
+    "JobLogs": "pig:JobLogs",
+    "ScriptRequest": "pig:ScriptRequest",
+    "ValidationResult": "pig:ValidationResult",
+    "ValidationError": "pig:ValidationError",
+    "jobs": {
+      "@id": "pig:jobs",
+      "@container": "@set"
+    },
+    "total": {
+      "@id": "pig:total",
+      "@type": "xsd:integer"
+    },
+    "jobId": {
+      "@id": "pig:jobId",
+      "@type": "xsd:string"
+    },
+    "name": {
+      "@id": "pig:name",
+      "@type": "schema:name"
+    },
+    "status": {
+      "@id": "pig:status",
+      "@type": "xsd:string"
+    },
+    "submittedAt": {
+      "@id": "pig:submittedAt",
+      "@type": "xsd:string"
+    },
+    "startedAt": {
+      "@id": "pig:startedAt",
+      "@type": "xsd:string"
+    },
+    "completedAt": {
+      "@id": "pig:completedAt",
+      "@type": "xsd:string"
+    },
+    "executionEngine": {
+      "@id": "pig:executionEngine",
+      "@type": "xsd:string"
+    },
+    "progress": {
+      "@id": "pig:progress",
+      "@type": "xsd:decimal"
+    },
+    "script": {
+      "@id": "pig:script",
+      "@type": "xsd:string"
+    },
+    "parameters": {
+      "@id": "pig:parameters",
+      "@type": "xsd:string"
+    },
+    "logs": {
+      "@id": "pig:logs",
+      "@container": "@set"
+    },
+    "valid": {
+      "@id": "pig:valid",
+      "@type": "xsd:boolean"
+    },
+    "errors": {
+      "@id": "pig:errors",
+      "@container": "@set"
+    },
+    "line": {
+      "@id": "pig:line",
+      "@type": "xsd:integer"
+    },
+    "column": {
+      "@id": "pig:column",
+      "@type": "xsd:integer"
+    },
+    "message": {
+      "@id": "pig:message",
+      "@type": "xsd:string"
+    },
+    "severity": {
+      "@id": "pig:severity",
+      "@type": "xsd:string"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "jobId": "500123",
+  "name": "example-name",
+  "status": "submitted",
+  "submittedAt": "example",
+  "startedAt": "example",
+  "completedAt": "example",
+  "executionEngine": "mapreduce",
+  "progress": 0.5
+}

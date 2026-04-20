@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-pig/refs/heads/main/json-schema/apache-pig-job-request-schema.json",
+  "title": "JobRequest",
+  "description": "JobRequest schema from Apache Pig",
+  "type": "object",
+  "properties": {
+    "script": {
+      "type": "string",
+      "description": "Pig Latin script content",
+      "example": "A = LOAD 'data.csv' USING PigStorage(',');\nB = FILTER A BY $0 > 100;\nSTORE B INTO 'output';"
+    },
+    "name": {
+      "type": "string",
+      "description": "Job name",
+      "example": "sales-analysis"
+    },
+    "executionEngine": {
+      "type": "string",
+      "enum": [
+        "mapreduce",
+        "tez",
+        "local"
+      ],
+      "default": "tez"
+    },
+    "parameters": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Script parameters as key-value pairs"
+    }
+  },
+  "required": [
+    "script"
+  ]
+}

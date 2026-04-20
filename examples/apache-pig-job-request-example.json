@@ -1,0 +1,6 @@
+{
+  "script": "example",
+  "name": "example-name",
+  "executionEngine": "mapreduce",
+  "parameters": {}
+}
