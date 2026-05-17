@@ -52,7 +52,7 @@ common:
   url: vocabulary/apache-pig-vocabulary.yaml
 - type: NaftikoCapability
   url: capabilities/pig-workflow.yaml
-- type: JSON-LD
+- type: JSONLD
   url: json-ld/apache-pig-context.jsonld
 - type: Features
   data:
