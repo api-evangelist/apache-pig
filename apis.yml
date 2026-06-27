@@ -36,9 +36,9 @@ apis:
     url: https://pig.apache.org/docs/latest/
   - type: OpenAPI
     url: openapi/apache-pig-api.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/apache-pig-jobs.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/apache-pig-scripts.yaml
 maintainers:
 - FN: Kin Lane
