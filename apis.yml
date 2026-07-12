@@ -44,6 +44,10 @@ maintainers:
 - FN: Kin Lane
   email: info@apievangelist.com
 common:
+- type: VulnerabilityDisclosure
+  url: security/apache-pig-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/apache-pig-domain-security.yml
 - type: GitHubOrganization
   url: https://github.com/apache/pig
 - type: Documentation
