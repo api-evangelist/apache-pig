@@ -1,0 +1,82 @@
+openapi: 3.0.3
+info:
+  title: Apache Pig Jobs Scripts API
+  description: Apache Pig is a platform for analyzing large data sets using Pig Latin, a high-level scripting language that compiles to MapReduce/Tez jobs. This API represents the Pig REST service for job submission and management.
+  version: 0.17.0
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+  contact:
+    url: https://pig.apache.org/
+servers:
+- url: https://{host}/pig
+  variables:
+    host:
+      default: localhost:8080
+tags:
+- name: Scripts
+paths:
+  /validate:
+    post:
+      operationId: validateScript
+      summary: Apache Pig Validate Script
+      description: Validate a Pig Latin script for syntax errors without executing it.
+      tags:
+      - Scripts
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ScriptRequest'
+      responses:
+        '200':
+          description: Validation result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationResult'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    ValidationResult:
+      type: object
+      properties:
+        valid:
+          type: boolean
+          example: true
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
+    ScriptRequest:
+      type: object
+      required:
+      - script
+      properties:
+        script:
+          type: string
+          example: 'A = LOAD ''data.csv'';
+
+            B = FOREACH A GENERATE $0, $1;'
+    ValidationError:
+      type: object
+      properties:
+        line:
+          type: integer
+          example: 3
+        column:
+          type: integer
+          example: 10
+        message:
+          type: string
+          example: 'Undefined alias: UNDEFINED_ALIAS'
+        severity:
+          type: string
+          enum:
+          - error
+          - warning
+          example: error
+x-generated-from: documentation
