@@ -3,9 +3,21 @@ name: Apache Pig
 description: Apache Pig is a platform for analyzing large data sets that provides a high-level language (Pig Latin) for expressing
   data analysis programs. It compiles Pig Latin programs into MapReduce/Tez jobs and runs them on Hadoop clusters.
 type: Index
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
 position: Consumer
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/apache-pig.png
 tags:
 - Big Data
 - Data Analysis
@@ -19,23 +31,32 @@ modified: '2026-05-19'
 url: https://raw.githubusercontent.com/api-evangelist/apache-pig/refs/heads/main/apis.yml
 specificationVersion: '0.19'
 apis:
-- aid: apache-pig:apache-pig
-  name: Apache Pig
-  description: Pig provides the Pig Latin scripting language for data analysis, an embedded Pig API for programmatic execution
-    from Java, and a UDF (User Defined Function) API for custom data transformation functions.
+- aid: apache-pig:apache-pig-jobs-api
+  name: Apache Pig Jobs API
+  description: The Jobs API from Apache Pig — 3 operation(s) for jobs.
   humanURL: https://pig.apache.org/docs/latest/
   tags:
-  - Data Analysis
-  - Java
-  - Pig Latin
-  - UDF
-  - Apache
-  - Open Source
+  - Jobs
   properties:
+  - type: OpenAPI
+    url: openapi/apache-pig-jobs-api-openapi.yml
   - type: Documentation
     url: https://pig.apache.org/docs/latest/
+  - type: X-NaftikoCapability
+    url: capabilities/apache-pig-jobs.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apache-pig-scripts.yaml
+- aid: apache-pig:apache-pig-scripts-api
+  name: Apache Pig Scripts API
+  description: The Scripts API from Apache Pig — 1 operation(s) for scripts.
+  humanURL: https://pig.apache.org/docs/latest/
+  tags:
+  - Scripts
+  properties:
   - type: OpenAPI
-    url: openapi/apache-pig-api.yaml
+    url: openapi/apache-pig-scripts-api-openapi.yml
+  - type: Documentation
+    url: https://pig.apache.org/docs/latest/
   - type: X-NaftikoCapability
     url: capabilities/apache-pig-jobs.yaml
   - type: X-NaftikoCapability
