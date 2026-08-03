@@ -1,0 +1,244 @@
+openapi: 3.0.3
+info:
+  title: Apache Pig API
+  description: Apache Pig is a platform for analyzing large data sets using Pig Latin, a high-level scripting language that compiles to MapReduce/Tez jobs. This API represents the Pig REST service for job submission and management.
+  version: 0.17.0
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+  contact:
+    url: https://pig.apache.org/
+x-generated-from: documentation
+servers:
+  - url: https://{host}/pig
+    variables:
+      host:
+        default: localhost:8080
+paths:
+  /jobs:
+    get:
+      operationId: listJobs
+      summary: Apache Pig List Jobs
+      description: List all Pig jobs with their status and execution details.
+      tags: [Jobs]
+      parameters:
+        - name: status
+          in: query
+          schema:
+            type: string
+            enum: [submitted, running, succeeded, failed, killed]
+          description: Filter by job status
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 20
+          description: Maximum number of jobs to return
+      responses:
+        '200':
+          description: List of jobs
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobList'
+      x-microcks-operation: {delay: 0, dispatcher: FALLBACK}
+    post:
+      operationId: submitJob
+      summary: Apache Pig Submit Job
+      description: Submit a Pig Latin script for execution.
+      tags: [Jobs]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/JobRequest'
+      responses:
+        '201':
+          description: Job submitted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Job'
+      x-microcks-operation: {delay: 0, dispatcher: FALLBACK}
+  /jobs/{jobId}:
+    get:
+      operationId: getJob
+      summary: Apache Pig Get Job
+      description: Get details and status of a specific Pig job.
+      tags: [Jobs]
+      parameters:
+        - $ref: '#/components/parameters/jobId'
+      responses:
+        '200':
+          description: Job details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Job'
+      x-microcks-operation: {delay: 0, dispatcher: FALLBACK}
+    delete:
+      operationId: killJob
+      summary: Apache Pig Kill Job
+      description: Kill a running Pig job.
+      tags: [Jobs]
+      parameters:
+        - $ref: '#/components/parameters/jobId'
+      responses:
+        '200':
+          description: Job killed
+      x-microcks-operation: {delay: 0, dispatcher: FALLBACK}
+  /jobs/{jobId}/logs:
+    get:
+      operationId: getJobLogs
+      summary: Apache Pig Get Job Logs
+      description: Get execution logs for a Pig job.
+      tags: [Jobs]
+      parameters:
+        - $ref: '#/components/parameters/jobId'
+      responses:
+        '200':
+          description: Job logs
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobLogs'
+      x-microcks-operation: {delay: 0, dispatcher: FALLBACK}
+  /validate:
+    post:
+      operationId: validateScript
+      summary: Apache Pig Validate Script
+      description: Validate a Pig Latin script for syntax errors without executing it.
+      tags: [Scripts]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ScriptRequest'
+      responses:
+        '200':
+          description: Validation result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationResult'
+      x-microcks-operation: {delay: 0, dispatcher: FALLBACK}
+components:
+  parameters:
+    jobId:
+      name: jobId
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Job identifier
+      example: job_20260419_001
+  schemas:
+    JobList:
+      type: object
+      properties:
+        jobs:
+          type: array
+          items:
+            $ref: '#/components/schemas/Job'
+        total:
+          type: integer
+          example: 5
+    Job:
+      type: object
+      properties:
+        jobId:
+          type: string
+          example: job_20260419_001
+        name:
+          type: string
+          example: sales-analysis
+        status:
+          type: string
+          enum: [submitted, running, succeeded, failed, killed]
+          example: running
+        submittedAt:
+          type: string
+          format: date-time
+          example: "2026-04-19T10:00:00Z"
+        startedAt:
+          type: string
+          format: date-time
+          example: "2026-04-19T10:01:00Z"
+        completedAt:
+          type: string
+          format: date-time
+        executionEngine:
+          type: string
+          enum: [mapreduce, tez, local]
+          example: tez
+        progress:
+          type: number
+          description: Progress percentage 0-100
+          example: 45.5
+    JobRequest:
+      type: object
+      required: [script]
+      properties:
+        script:
+          type: string
+          description: Pig Latin script content
+          example: "A = LOAD 'data.csv' USING PigStorage(',');\nB = FILTER A BY $0 > 100;\nSTORE B INTO 'output';"
+        name:
+          type: string
+          description: Job name
+          example: sales-analysis
+        executionEngine:
+          type: string
+          enum: [mapreduce, tez, local]
+          default: tez
+        parameters:
+          type: object
+          additionalProperties:
+            type: string
+          description: Script parameters as key-value pairs
+    JobLogs:
+      type: object
+      properties:
+        jobId:
+          type: string
+          example: job_20260419_001
+        logs:
+          type: array
+          items:
+            type: string
+          example: ["2026-04-19 10:00:00 INFO Pig script started"]
+    ScriptRequest:
+      type: object
+      required: [script]
+      properties:
+        script:
+          type: string
+          example: "A = LOAD 'data.csv';\nB = FOREACH A GENERATE $0, $1;"
+    ValidationResult:
+      type: object
+      properties:
+        valid:
+          type: boolean
+          example: true
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
+    ValidationError:
+      type: object
+      properties:
+        line:
+          type: integer
+          example: 3
+        column:
+          type: integer
+          example: 10
+        message:
+          type: string
+          example: "Undefined alias: UNDEFINED_ALIAS"
+        severity:
+          type: string
+          enum: [error, warning]
+          example: error

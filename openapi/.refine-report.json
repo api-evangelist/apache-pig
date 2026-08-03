@@ -1,0 +1,16 @@
+{
+  "provider": "apache-pig",
+  "sources": [
+    "apache-pig-jobs-api-openapi.yml",
+    "apache-pig-scripts-api-openapi.yml"
+  ],
+  "outputs": [
+    "apache-pig-jobs-api-openapi.yml",
+    "apache-pig-scripts-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
