@@ -42,10 +42,6 @@ apis:
     url: openapi/apache-pig-jobs-api-openapi.yml
   - type: Documentation
     url: https://pig.apache.org/docs/latest/
-  - type: X-NaftikoCapability
-    url: capabilities/apache-pig-jobs.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/apache-pig-scripts.yaml
 - aid: apache-pig:apache-pig-scripts-api
   name: Apache Pig Scripts API
   description: The Scripts API from Apache Pig — 1 operation(s) for scripts.
@@ -57,10 +53,6 @@ apis:
     url: openapi/apache-pig-scripts-api-openapi.yml
   - type: Documentation
     url: https://pig.apache.org/docs/latest/
-  - type: X-NaftikoCapability
-    url: capabilities/apache-pig-jobs.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/apache-pig-scripts.yaml
 maintainers:
 - FN: Kin Lane
   email: info@apievangelist.com
