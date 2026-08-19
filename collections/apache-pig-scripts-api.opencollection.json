@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache Pig Jobs Scripts API",
+    "version": "0.17.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Scripts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache Pig Validate Script",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/pig/validate",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Validate a Pig Latin script for syntax errors without executing it."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

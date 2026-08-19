@@ -1,0 +1,115 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache Pig Jobs API",
+    "version": "0.17.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Jobs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache Pig List Jobs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/pig/jobs",
+            "params": [
+              {
+                "name": "status",
+                "value": "",
+                "type": "query",
+                "description": "Filter by job status"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of jobs to return"
+              }
+            ]
+          },
+          "docs": "List all Pig jobs with their status and execution details."
+        },
+        {
+          "info": {
+            "name": "Apache Pig Submit Job",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/pig/jobs",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Submit a Pig Latin script for execution."
+        },
+        {
+          "info": {
+            "name": "Apache Pig Get Job",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/pig/jobs/:jobId",
+            "params": [
+              {
+                "name": "jobId",
+                "value": "job_20260419_001",
+                "type": "path",
+                "description": "Job identifier"
+              }
+            ]
+          },
+          "docs": "Get details and status of a specific Pig job."
+        },
+        {
+          "info": {
+            "name": "Apache Pig Kill Job",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{host}/pig/jobs/:jobId",
+            "params": [
+              {
+                "name": "jobId",
+                "value": "job_20260419_001",
+                "type": "path",
+                "description": "Job identifier"
+              }
+            ]
+          },
+          "docs": "Kill a running Pig job."
+        },
+        {
+          "info": {
+            "name": "Apache Pig Get Job Logs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/pig/jobs/:jobId/logs",
+            "params": [
+              {
+                "name": "jobId",
+                "value": "job_20260419_001",
+                "type": "path",
+                "description": "Job identifier"
+              }
+            ]
+          },
+          "docs": "Get execution logs for a Pig job."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

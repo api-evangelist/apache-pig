@@ -1,0 +1,152 @@
+{
+  "item": [
+    {
+      "id": "6b6dfd8e-91f5-4853-bf47-b4d7ab80c2fe",
+      "name": "Scripts",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "86380df2-e462-4e60-bd92-d5c5f6edde35",
+          "name": "Apache Pig Validate Script",
+          "request": {
+            "name": "Apache Pig Validate Script",
+            "description": {
+              "content": "Validate a Pig Latin script for syntax errors without executing it.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "validate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"script\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6004bb3f-a15c-4d64-ba0e-881352d43623",
+              "name": "Validation result",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "validate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"script\": \"A = LOAD 'data.csv';\\nB = FOREACH A GENERATE $0, $1;\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"valid\": true,\n  \"errors\": [\n    {\n      \"line\": 3,\n      \"column\": 10,\n      \"message\": \"Undefined alias: UNDEFINED_ALIAS\",\n      \"severity\": \"error\"\n    },\n    {\n      \"line\": 3,\n      \"column\": 10,\n      \"message\": \"Undefined alias: UNDEFINED_ALIAS\",\n      \"severity\": \"error\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "localhost:8080",
+      "key": "host"
+    },
+    {
+      "type": "string",
+      "value": "https://{{host}}/pig",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "2b19687e-ff1b-4df8-9d92-bc67bae83e71",
+    "name": "Apache Pig Jobs Scripts API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Apache Pig is a platform for analyzing large data sets using Pig Latin, a high-level scripting language that compiles to MapReduce/Tez jobs. This API represents the Pig REST service for job submission and management.",
+      "type": "text/plain"
+    }
+  }
+}

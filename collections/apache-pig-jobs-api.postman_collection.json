@@ -1,0 +1,572 @@
+{
+  "item": [
+    {
+      "id": "3b9b399f-d3e4-4d0c-a5fc-c2f27df9711e",
+      "name": "Jobs",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d4121b83-7664-4b68-999a-468bd0856465",
+          "name": "Apache Pig List Jobs",
+          "request": {
+            "name": "Apache Pig List Jobs",
+            "description": {
+              "content": "List all Pig jobs with their status and execution details.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "jobs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>",
+                  "description": "Filter by job status"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "20",
+                  "description": "Maximum number of jobs to return"
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7317c84b-8fee-4d91-88f3-7a57647ddae9",
+              "name": "List of jobs",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "jobs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"jobs\": [\n    {\n      \"jobId\": \"job_20260419_001\",\n      \"name\": \"sales-analysis\",\n      \"status\": \"running\",\n      \"submittedAt\": \"2026-04-19T10:00:00Z\",\n      \"startedAt\": \"2026-04-19T10:01:00Z\",\n      \"completedAt\": \"1954-06-02T20:55:18.852Z\",\n      \"executionEngine\": \"tez\",\n      \"progress\": 45.5\n    },\n    {\n      \"jobId\": \"job_20260419_001\",\n      \"name\": \"sales-analysis\",\n      \"status\": \"running\",\n      \"submittedAt\": \"2026-04-19T10:00:00Z\",\n      \"startedAt\": \"2026-04-19T10:01:00Z\",\n      \"completedAt\": \"2002-03-26T07:06:12.123Z\",\n      \"executionEngine\": \"tez\",\n      \"progress\": 45.5\n    }\n  ],\n  \"total\": 5\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "694c9d38-b94e-469a-9a7a-345e3e71a98f",
+          "name": "Apache Pig Submit Job",
+          "request": {
+            "name": "Apache Pig Submit Job",
+            "description": {
+              "content": "Submit a Pig Latin script for execution.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "jobs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"script\": \"<string>\",\n  \"name\": \"<string>\",\n  \"executionEngine\": \"tez\",\n  \"parameters\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "bd54950f-d4a6-4dd2-a5f9-114323ebaa1b",
+              "name": "Job submitted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "jobs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"script\": \"A = LOAD 'data.csv' USING PigStorage(',');\\nB = FILTER A BY $0 > 100;\\nSTORE B INTO 'output';\",\n  \"name\": \"sales-analysis\",\n  \"executionEngine\": \"tez\",\n  \"parameters\": {\n    \"key_0\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"jobId\": \"job_20260419_001\",\n  \"name\": \"sales-analysis\",\n  \"status\": \"running\",\n  \"submittedAt\": \"2026-04-19T10:00:00Z\",\n  \"startedAt\": \"2026-04-19T10:01:00Z\",\n  \"completedAt\": \"2014-10-27T15:16:51.432Z\",\n  \"executionEngine\": \"tez\",\n  \"progress\": 45.5\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "366d80d1-59aa-440d-a110-b18c02d33fe2",
+          "name": "Apache Pig Get Job",
+          "request": {
+            "name": "Apache Pig Get Job",
+            "description": {
+              "content": "Get details and status of a specific Pig job.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "jobs",
+                ":jobId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "jobId",
+                  "description": "(Required) Job identifier"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "aede64e1-f781-462f-a77d-60a03de2aee7",
+              "name": "Job details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "jobs",
+                    ":jobId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "jobId",
+                      "description": "(Required) Job identifier"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"jobId\": \"job_20260419_001\",\n  \"name\": \"sales-analysis\",\n  \"status\": \"running\",\n  \"submittedAt\": \"2026-04-19T10:00:00Z\",\n  \"startedAt\": \"2026-04-19T10:01:00Z\",\n  \"completedAt\": \"2014-10-27T15:16:51.432Z\",\n  \"executionEngine\": \"tez\",\n  \"progress\": 45.5\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c4ecbdd2-ee3a-4655-99a4-6e1182b20a23",
+          "name": "Apache Pig Kill Job",
+          "request": {
+            "name": "Apache Pig Kill Job",
+            "description": {
+              "content": "Kill a running Pig job.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "jobs",
+                ":jobId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "jobId",
+                  "description": "(Required) Job identifier"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a5ebdb91-0f33-45aa-9efb-a7b55773945b",
+              "name": "Job killed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "jobs",
+                    ":jobId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "jobId",
+                      "description": "(Required) Job identifier"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e35d0fbd-05bc-496d-825f-416c006a8b07",
+          "name": "Apache Pig Get Job Logs",
+          "request": {
+            "name": "Apache Pig Get Job Logs",
+            "description": {
+              "content": "Get execution logs for a Pig job.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "jobs",
+                ":jobId",
+                "logs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "jobId",
+                  "description": "(Required) Job identifier"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "28a0578a-991e-4ed8-b3b0-23675d04b759",
+              "name": "Job logs",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "jobs",
+                    ":jobId",
+                    "logs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "jobId",
+                      "description": "(Required) Job identifier"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"jobId\": \"job_20260419_001\",\n  \"logs\": [\n    \"2026-04-19 10:00:00 INFO Pig script started\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "localhost:8080",
+      "key": "host"
+    },
+    {
+      "type": "string",
+      "value": "https://{{host}}/pig",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "28407d15-9d78-4763-93e5-f0af08732e4f",
+    "name": "Apache Pig Jobs API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Apache Pig is a platform for analyzing large data sets using Pig Latin, a high-level scripting language that compiles to MapReduce/Tez jobs. This API represents the Pig REST service for job submission and management.",
+      "type": "text/plain"
+    }
+  }
+}
