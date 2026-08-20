@@ -25,6 +25,14 @@ tags:
 - Hadoop
 - Scripting
 - Apache
+- Open-Source
+tags_raw:
+- Big Data
+- Data Analysis
+- ETL
+- Hadoop
+- Scripting
+- Apache
 - Open Source
 created: '2026-03-16'
 modified: '2026-05-19'
@@ -36,6 +44,8 @@ apis:
   description: The Jobs API from Apache Pig — 3 operation(s) for jobs.
   humanURL: https://pig.apache.org/docs/latest/
   tags:
+  - Job
+  tags_raw:
   - Jobs
   properties:
   - type: OpenAPI
