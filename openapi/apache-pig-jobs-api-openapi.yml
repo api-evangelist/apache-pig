@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: Apache Pig Jobs API
   description: Apache Pig is a platform for analyzing large data sets using Pig Latin, a high-level scripting language that compiles to MapReduce/Tez jobs. This API represents the Pig REST service for job submission and management.
@@ -126,46 +126,16 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
+  parameters:
+    jobId:
+      name: jobId
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Job identifier
+      example: job_20260419_001
   schemas:
-    JobRequest:
-      type: object
-      required:
-      - script
-      properties:
-        script:
-          type: string
-          description: Pig Latin script content
-          example: 'A = LOAD ''data.csv'' USING PigStorage('','');
-
-            B = FILTER A BY $0 > 100;
-
-            STORE B INTO ''output'';'
-        name:
-          type: string
-          description: Job name
-          example: sales-analysis
-        executionEngine:
-          type: string
-          enum:
-          - mapreduce
-          - tez
-          - local
-          default: tez
-        parameters:
-          type: object
-          additionalProperties:
-            type: string
-          description: Script parameters as key-value pairs
-    JobList:
-      type: object
-      properties:
-        jobs:
-          type: array
-          items:
-            $ref: '#/components/schemas/Job'
-        total:
-          type: integer
-          example: 5
     Job:
       type: object
       properties:
@@ -218,13 +188,43 @@ components:
             type: string
           example:
           - 2026-04-19 10:00:00 INFO Pig script started
-  parameters:
-    jobId:
-      name: jobId
-      in: path
-      required: true
-      schema:
-        type: string
-      description: Job identifier
-      example: job_20260419_001
+    JobRequest:
+      type: object
+      required:
+      - script
+      properties:
+        script:
+          type: string
+          description: Pig Latin script content
+          example: 'A = LOAD ''data.csv'' USING PigStorage('','');
+
+            B = FILTER A BY $0 > 100;
+
+            STORE B INTO ''output'';'
+        name:
+          type: string
+          description: Job name
+          example: sales-analysis
+        executionEngine:
+          type: string
+          enum:
+          - mapreduce
+          - tez
+          - local
+          default: tez
+        parameters:
+          type: object
+          additionalProperties:
+            type: string
+          description: Script parameters as key-value pairs
+    JobList:
+      type: object
+      properties:
+        jobs:
+          type: array
+          items:
+            $ref: '#/components/schemas/Job'
+        total:
+          type: integer
+          example: 5
 x-generated-from: documentation
