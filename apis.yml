@@ -1,7 +1,8 @@
 aid: apache-pig
 name: Apache Pig
-description: Apache Pig is a platform for analyzing large data sets that provides a high-level language (Pig Latin) for expressing
-  data analysis programs. It compiles Pig Latin programs into MapReduce/Tez jobs and runs them on Hadoop clusters.
+description: Apache Pig is a platform for analyzing large data sets that provides a high-level language
+  (Pig Latin) for expressing data analysis programs. It compiles Pig Latin programs into MapReduce/Tez
+  jobs and runs them on Hadoop clusters.
 type: Index
 deliveryModel:
   model: unknown
@@ -46,7 +47,7 @@ tags_raw:
 - Apache
 - Open Source
 created: '2026-03-16'
-modified: '2026-05-19'
+modified: '2026-09-16'
 url: https://raw.githubusercontent.com/api-evangelist/apache-pig/refs/heads/main/apis.yml
 specificationVersion: '0.23'
 apis:
@@ -78,6 +79,8 @@ maintainers:
 - FN: Kin Lane
   email: info@apievangelist.com
 common:
+- type: Website
+  url: https://apache.org
 - type: AgenticAccess
   url: agentic-access/apache-pig-agentic-access.yml
 - type: VulnerabilityDisclosure
