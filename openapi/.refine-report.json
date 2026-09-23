@@ -1,8 +1,7 @@
 {
   "provider": "apache-pig",
   "sources": [
-    "apache-pig-jobs-api-openapi.yml",
-    "apache-pig-scripts-api-openapi.yml"
+    "_ae-authored/apache-pig-api.yaml"
   ],
   "outputs": [
     "apache-pig-jobs-api-openapi.yml",
@@ -12,9 +11,14 @@
   "errors": [],
   "warnings": [],
   "notes": [
-    "apache-pig-jobs-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "apache-pig-scripts-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "apache-pig-api.yaml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apache-pig-api.yaml: declared missing tag: Jobs",
+    "apache-pig-api.yaml: declared missing tag: Scripts",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "apache-pig-jobs-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "apache-pig-scripts-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

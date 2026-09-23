@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Apache Pig Jobs Scripts API
+  title: Apache Pig Scripts API
   description: Apache Pig is a platform for analyzing large data sets using Pig Latin, a high-level scripting language that compiles to MapReduce/Tez jobs. This API represents the Pig REST service for job submission and management.
   version: 0.17.0
   license:

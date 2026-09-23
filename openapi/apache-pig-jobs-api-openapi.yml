@@ -176,18 +176,6 @@ components:
           type: number
           description: Progress percentage 0-100
           example: 45.5
-    JobLogs:
-      type: object
-      properties:
-        jobId:
-          type: string
-          example: job_20260419_001
-        logs:
-          type: array
-          items:
-            type: string
-          example:
-          - 2026-04-19 10:00:00 INFO Pig script started
     JobRequest:
       type: object
       required:
@@ -227,4 +215,16 @@ components:
         total:
           type: integer
           example: 5
+    JobLogs:
+      type: object
+      properties:
+        jobId:
+          type: string
+          example: job_20260419_001
+        logs:
+          type: array
+          items:
+            type: string
+          example:
+          - 2026-04-19 10:00:00 INFO Pig script started
 x-generated-from: documentation
