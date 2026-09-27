@@ -41,16 +41,6 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
-    ScriptRequest:
-      type: object
-      required:
-      - script
-      properties:
-        script:
-          type: string
-          example: 'A = LOAD ''data.csv'';
-
-            B = FOREACH A GENERATE $0, $1;'
     ValidationError:
       type: object
       properties:
@@ -79,4 +69,14 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ValidationError'
+    ScriptRequest:
+      type: object
+      required:
+      - script
+      properties:
+        script:
+          type: string
+          example: 'A = LOAD ''data.csv'';
+
+            B = FOREACH A GENERATE $0, $1;'
 x-generated-from: documentation

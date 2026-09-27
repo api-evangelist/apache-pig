@@ -126,15 +126,6 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
-  parameters:
-    jobId:
-      name: jobId
-      in: path
-      required: true
-      schema:
-        type: string
-      description: Job identifier
-      example: job_20260419_001
   schemas:
     Job:
       type: object
@@ -205,16 +196,6 @@ components:
           additionalProperties:
             type: string
           description: Script parameters as key-value pairs
-    JobList:
-      type: object
-      properties:
-        jobs:
-          type: array
-          items:
-            $ref: '#/components/schemas/Job'
-        total:
-          type: integer
-          example: 5
     JobLogs:
       type: object
       properties:
@@ -227,4 +208,23 @@ components:
             type: string
           example:
           - 2026-04-19 10:00:00 INFO Pig script started
+    JobList:
+      type: object
+      properties:
+        jobs:
+          type: array
+          items:
+            $ref: '#/components/schemas/Job'
+        total:
+          type: integer
+          example: 5
+  parameters:
+    jobId:
+      name: jobId
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Job identifier
+      example: job_20260419_001
 x-generated-from: documentation

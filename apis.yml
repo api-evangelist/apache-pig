@@ -37,7 +37,7 @@ tags:
 - Hadoop
 - Scripting
 - Apache
-- Open-Source
+- Open Source
 tags_raw:
 - Big Data
 - Data Analysis
@@ -46,6 +46,7 @@ tags_raw:
 - Scripting
 - Apache
 - Open Source
+- Open-Source
 created: '2026-03-16'
 modified: '2026-09-16'
 url: https://raw.githubusercontent.com/api-evangelist/apache-pig/refs/heads/main/apis.yml
