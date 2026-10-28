@@ -1,4 +1,4 @@
-# Apache Pig (apache-pig)
+# Apache Pig
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,122 +66,171 @@
 
 Apache Pig is a platform for analyzing large data sets that provides a high-level language (Pig Latin) for expressing data analysis programs. It compiles Pig Latin programs into MapReduce/Tez jobs and runs them on Hadoop clusters.
 
-**URL:** [https://raw.githubusercontent.com/api-evangelist/apache-pig/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/apache-pig/refs/heads/main/apis.yml)
+**Areas:** Big Data · Data Analysis · ETL · Hadoop · Scripting · Apache · Open Source
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## Apache Pig on APIs.io
 
-## Tags:
+Everything profiled for Apache Pig is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/apache-pig/](https://apis.io/providers/apache-pig/)** — or go straight to one of the APIs or properties below.
 
- - Big Data, Data Analysis, ETL, Hadoop, Scripting, Apache, Open Source
+### APIs (2)
 
-## Timestamps
+- [Apache Pig Jobs API](https://apis.io/apis/apache-pig/apache-pig-jobs-api/) — The Jobs API from Apache Pig — 3 operation(s) for jobs.
+- [Apache Pig Scripts API](https://apis.io/apis/apache-pig/apache-pig-scripts-api/) — The Scripts API from Apache Pig — 1 operation(s) for scripts.
 
-- **Created:** 2026-03-16
-- **Modified:** 2026-04-19
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### Apache Pig
-Pig provides the Pig Latin scripting language for data analysis, an embedded Pig API for programmatic execution from Java, and a UDF (User Defined Function) API for custom data transformation functions.
+#### Agentic access (1)
 
-**Human URL:** [https://pig.apache.org/docs/latest/](https://pig.apache.org/docs/latest/)
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags:
+- [Apache Pig Agentic Access](https://apis.io/agentic-access/apache-pig/apache-pig-agentic-access/)
 
- - Data Analysis, Java, Pig Latin, UDF, Apache, Open Source
+#### JSON Schema (7)
 
-#### Properties
+The data models the API reads and writes.
 
-- [Documentation](https://pig.apache.org/docs/latest/)
-- [OpenAPI](openapi/apache-pig-api.yaml)
+- [Job](https://apis.io/schemas/apache-pig/apache-pig-job/)
+- [JobList](https://apis.io/schemas/apache-pig/apache-pig-job-list/)
+- [JobLogs](https://apis.io/schemas/apache-pig/apache-pig-job-logs/)
+- [JobRequest](https://apis.io/schemas/apache-pig/apache-pig-job-request/)
+- [ScriptRequest](https://apis.io/schemas/apache-pig/apache-pig-script-request/)
+- [ValidationError](https://apis.io/schemas/apache-pig/apache-pig-validation-error/)
+- [ValidationResult](https://apis.io/schemas/apache-pig/apache-pig-validation-result/)
 
-## Common Properties
+#### JSON Structure (7)
 
-- [GitHubOrganization](https://github.com/apache/pig)
+Data models expressed in JSON Structure.
+
+- [Apache Pig Job List Structure](https://apis.io/json-structure/apache-pig/apache-pig-job-list-structure/)
+- [Apache Pig Job Logs Structure](https://apis.io/json-structure/apache-pig/apache-pig-job-logs-structure/)
+- [Apache Pig Job Request Structure](https://apis.io/json-structure/apache-pig/apache-pig-job-request-structure/)
+- [Apache Pig Job Structure](https://apis.io/json-structure/apache-pig/apache-pig-job-structure/)
+- [Apache Pig Script Request Structure](https://apis.io/json-structure/apache-pig/apache-pig-script-request-structure/)
+- [Apache Pig Validation Error Structure](https://apis.io/json-structure/apache-pig/apache-pig-validation-error-structure/)
+- [Apache Pig Validation Result Structure](https://apis.io/json-structure/apache-pig/apache-pig-validation-result-structure/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Apache Pig Context](https://apis.io/jsonld/apache-pig/apache-pig-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Apache Pig Vocabulary](https://apis.io/vocabularies/apache-pig/apache-pig-vocabulary/)
+
+#### Examples (7)
+
+Example requests and responses.
+
+- [Apache Pig Job Example](https://apis.io/examples/apache-pig/apache-pig-job-example/)
+- [Apache Pig Job List Example](https://apis.io/examples/apache-pig/apache-pig-job-list-example/)
+- [Apache Pig Job Logs Example](https://apis.io/examples/apache-pig/apache-pig-job-logs-example/)
+- [Apache Pig Job Request Example](https://apis.io/examples/apache-pig/apache-pig-job-request-example/)
+- [Apache Pig Script Request Example](https://apis.io/examples/apache-pig/apache-pig-script-request-example/)
+- [Apache Pig Validation Error Example](https://apis.io/examples/apache-pig/apache-pig-validation-error-example/)
+- [Apache Pig Validation Result Example](https://apis.io/examples/apache-pig/apache-pig-validation-result-example/)
+
+#### Collections (2)
+
+Postman and Open Collection request collections.
+
+- [Apache Pig Jobs API](https://apis.io/collections/apache-pig/open-apache-pig-jobs-api/)
+- [Apache Pig Jobs Scripts API](https://apis.io/collections/apache-pig/open-apache-pig-scripts-api/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Apache Pig — jsonschema rules](https://apis.io/rules/apache-pig/apache-pig-jsonschema-spectral-rules/)
+- [Apache Pig API Rules](https://apis.io/rules/apache-pig/apache-pig-spectral-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Apache Pig Domain Security](https://apis.io/security/apache-pig/apache-pig-domain-security/)
+- [Apache Pig Vulnerability Disclosure](https://apis.io/security/apache-pig/apache-pig-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Apache Pig Plans Pricing](https://apis.io/plans/apache-pig/apache-pig-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Apache Pig Rate Limits](https://apis.io/rate-limits/apache-pig/apache-pig-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Apache Pig Finops](https://apis.io/finops/apache-pig/apache-pig-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://apache.org)
 - [Documentation](https://pig.apache.org/)
-- [SpectralRules](rules/apache-pig-spectral-rules.yml)
-- [Vocabulary](vocabulary/apache-pig-vocabulary.yaml)
-- [NaftikoCapability](capabilities/pig-workflow.yaml)
-- [JSON-LD](json-ld/apache-pig-context.jsonld)
+- [GitHub](https://github.com/apache/pig)
 
-## Features
+## API Evangelist rating
 
-| Name | Description |
-|------|-------------|
-| Pig Latin Language | High-level dataflow language for expressing data transformations |
-| MapReduce/Tez Backend | Compiles Pig Latin to MapReduce or Apache Tez execution plans |
-| UDF Support | User-defined functions in Java, Python, JavaScript, and Ruby |
-| Streaming | Process data through external programs using STREAM operator |
-| Schema Evolution | Flexible schema handling for semi-structured data |
-| Optimization | Automatic logical and physical plan optimization |
+**Kin Score 18.1** — emerging · rubric 0.24.0 · scored 2026-10-17
 
-## Use Cases
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 19.0 |
+| Contract governance | 27.3 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 9.5 |
+| Access clarity | 7.9 |
 
-| Name | Description |
-|------|-------------|
-| ETL Pipelines | Build data transformation pipelines from raw logs to structured data |
-| Ad-hoc Data Analysis | Analyze large datasets with ad-hoc Pig Latin queries |
-| Data Preparation | Clean and prepare data for machine learning workflows |
-| Log Processing | Process and aggregate web server and application logs |
+**Agent readiness 15.4** — agent-aware
 
-## Integrations
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
 
-| Name | Description |
-|------|-------------|
-| Apache Hadoop | Native MapReduce execution on YARN/HDFS |
-| Apache Tez | High-performance Tez execution engine support |
-| Apache HBase | HBase storage handler for reading/writing HBase tables |
-| Apache Hive | HCatalog integration for Hive metastore access |
-| Amazon S3 | S3 input/output for cloud-based data processing |
+**Regulatory alignment 16.7** — Horizontal (data, software, accessibility, platform)
 
-## Artifacts
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/apache-pig/](https://apis.io/providers/apache-pig/).
 
-Machine-readable API specifications organized by format.
+## How this profile is made
 
-### OpenAPI
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
 
-- [Apache Pig API](openapi/apache-pig-api.yaml)
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Apache Pig: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
 
-### JSON Schema
+## Open an issue
 
-- [Job](json-schema/apache-pig-job-schema.json)
-- [Job Request](json-schema/apache-pig-job-request-schema.json)
-- [Job Logs](json-schema/apache-pig-job-logs-schema.json)
-- [Validation Result](json-schema/apache-pig-validation-result-schema.json)
-- [And more...](json-schema/)
-
-### JSON Structure
-
-- [Apache Pig JSON Structures](json-structure/)
-
-### JSON-LD
-
-- [Apache Pig Context](json-ld/apache-pig-context.jsonld)
-
-### Examples
-
-- [Apache Pig Examples](examples/)
-
-## Capabilities
-
-Naftiko capabilities organized as shared per-API definitions composed into customer-facing workflows.
-
-### Workflow Capabilities
-
-| Workflow | APIs Combined | Tools | Persona |
-|----------|--------------|-------|---------|
-| [Data Processing Workflow](capabilities/pig-workflow.yaml) | Apache Pig | 6 | Data Engineer, Data Analyst |
-
-## Vocabulary
-
-- [Apache Pig Vocabulary](vocabulary/apache-pig-vocabulary.yaml) — Unified taxonomy mapping Pig data processing resources, actions, workflows, and personas
-
-## Rules
-
-- [Apache Pig Spectral Rules](rules/apache-pig-spectral-rules.yml) — Rules enforcing Apache Pig API conventions
-
-## Maintainers
-
-**FN:** Kin Lane
-
-**Email:** info@apievangelist.com
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/apache-pig/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
